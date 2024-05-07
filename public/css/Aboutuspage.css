@@ -8,7 +8,7 @@ body {
 
 .container {
     width: 80%;
-    margin: 20px auto;
+    margin: 90px auto;
     opacity: 0;
     animation: fadeIn 1s ease-in-out forwards;
     animation-delay: 0.5s; 
@@ -41,7 +41,10 @@ body {
         transform: translateY(0);
     }
 }
+.navlogo p{
 
+padding-top: 30px;
+}
 h1 {
     text-align: center;
     color: #283618;
@@ -55,3 +58,4 @@ p {
     line-height: 1.6;
     color:#606c38;
 }
+
