@@ -1,0 +1,225 @@
+/*.container{
+    display: grid;
+    grid-template-columns: 200px 200px;
+    gap: 1.5rem;
+    margin: 1.5rem;
+    align-items: center;
+}
+
+.container .booksBestSeller{
+    text-align: center;
+    margin-top: 2rem;
+}
+.container .booksBestSeller a img{
+    height: 25rem;
+
+}
+.container .booksBestSeller a:hover img{
+    transform: scale(.9);
+
+}
+
+.container .booksBestSeller .wrapper{
+    display: grid;
+    grid-template-columns: 200px 200px 200px 200px 200px;
+    gap: 1.5rem;
+    margin: 1.5rem;
+    align-items: center;
+}
+.bookimg{
+    width: 8rem;
+    height:0.2rem;
+} */
+
+/**/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+
+body{
+    background-color: #fefae0ff;
+}
+
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 10vh;
+
+}
+
+.nav{
+    position: fixed;
+    top: 0px;
+    margin-top:-20px;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 80px;
+    line-height: 100px;
+    background: linear-gradient( #606c38);
+    background-color: #606c38;
+    z-index: 999;
+}
+
+.navlogo p{
+    color:#fefae0;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.nav-menu ul{
+    display: flex;
+}
+
+.nav-menu ul li{
+    list-style-type: none;
+}
+.nav-menu ul li .link{
+    text-decoration: none;
+    font-weight: 500;
+    color: #fefae0;
+    padding-bottom:15px;/* padding-top: -5px;*/
+    margin:0px 25px ;
+}
+
+.nav-menu ul li .link:hover{
+ color:#dda15eff;;
+}
+
+.nav-button .btn{
+    width: 130px;
+    height: 40px;
+    font-weight: 800;
+    color: #fefae0; /* Lgreen */
+    background:#606c38;
+    border-radius: 40px;
+    cursor:pointer;
+    transition: .3 ease;
+    border:none
+
+}
+
+#signUpBtn{
+    margin-left: 15px;   
+}
+
+.btn:hover{
+    background: rgba(221,161,94,0.6);
+}
+
+/*                    Navigation bar ends here                    */
+
+section{
+    padding:2rem;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+.title{
+    text-align: left;
+    margin-top: 8.3rem;
+    margin-bottom: 0.4rem;
+    font-size: 4rem;
+    padding:.5rem 1rem;
+    color:#606c38ff;
+}
+
+.home .booksBestSeller{
+    position: relative;
+    display:flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 8.6rem;
+}
+
+hr{
+    height: 0.8rem;
+    background-color: #283618ff;
+    width: 28rem;
+}
+
+.p-bestseller{
+    text-align: left;
+    font-size: 2rem;
+    padding: 1rem;
+    color: #bc6c25ff;
+}
+
+a{
+    text-decoration: none;
+}
+
+.shop-button{
+    background-color: #606c38ff;
+    font-size: 1.5rem;
+    margin-left: 1rem;
+    height: 3rem;
+    width: 10rem;
+    border-radius: 40px;
+    border: none;
+    color: #fefae0;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.shop-button:hover{
+    background-color: #283618ff;
+    scale: 1.05;
+}
+
+.bookimg{
+    height: 13rem;
+    margin: 1rem;
+    object-position: center;
+    object-fit: contain;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.bookimg:hover{
+    scale: 1.1;
+}
+
+.shelf{
+    width:100%;
+    margin-top: -3rem;
+}
+
+.scroll-button-left{
+    position: absolute;
+    left: 0rem;
+    top: 1rem;
+    z-index: 1;
+    height: 13rem;
+    width: 1.5rem;
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+    color:#606c38;
+}
+
+.scroll-button-right{
+    position: absolute;
+    right: 0rem;
+    top: 1rem;
+    z-index: 1;
+    height: 13rem;
+    width: 1.5rem;
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+    color:#606c38;
+}
+
+.scroll-button:hover{
+    background: rgba(221, 161, 94, .6);
+    color: rgba(40, 54, 24, 1.0);
+}
+
