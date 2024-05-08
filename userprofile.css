@@ -1,0 +1,85 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #283618ff;
+    padding-top: 20px;
+    transition: left 0.5s ease; /* Added transition */
+}
+
+.sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #fefae0ff;
+    display: block;
+}
+
+.sidebar a:hover {
+    background-color: #606c38ff;
+}
+#sidebar-toggle {
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #bc6c25ff;;
+}
+#user-profile {
+    display: none; /* Initially hidden */
+}
+
+#edit-profile-form {
+    display: none; /* Initially hidden */
+}
+
+#edit-profile-form {
+    display: none;
+    background-color: #283618ff;
+    color: #fefae0ff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#edit-profile-form h1 {
+    color: #fefae0ff;
+    margin-bottom: 20px;
+}
+
+#edit-profile-form label {
+    display: block;
+    margin-bottom: 10px;
+    color: #fefae0ff;
+}
+
+#edit-profile-form input[type="text"],
+#edit-profile-form input[type="email"],
+#edit-profile-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+}
+
+#edit-profile-form input[type="submit"] {
+    background-color: #dda15eff;
+    color: #fefae0ff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#edit-profile-form input[type="submit"]:hover {
+    background-color: #bc6c25ff;
+}
