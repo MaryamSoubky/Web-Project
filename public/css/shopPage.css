@@ -174,7 +174,7 @@ html::-webkit-scrollbar-thumb{
 /* Banner design */
 
 #banner {
-    background-image: url("../Banner-img/Banner.png");
+    background-image: url("../bannerImages/Banner.png");
     width:100%;
     height: 21vh;
     background-size:cover;
@@ -277,7 +277,7 @@ html::-webkit-scrollbar-thumb{
     margin-top:4%;
 }
 
-#pagination a{
+#pagination button{
     text-decoration: none;
     background-color: #606c38;
     padding:15px 20px;
@@ -289,14 +289,22 @@ html::-webkit-scrollbar-thumb{
 
 /* Tabs (slots) design */
 
-#pagination a i{
+#pagination i{
     font-size:16px;
     font-weight:600px;
 }
 
-#pagination a:hover{
+#pagination button:hover{
     background-color:var(--pakistan-green);
     color:#fff;
+    cursor:pointer;
+}
+
+/* Hidden Container */
+
+#product1 #secondSlot{
+
+    display:none;
 }
 
 
