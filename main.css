@@ -1,37 +1,3 @@
-/*.container{
-    display: grid;
-    grid-template-columns: 200px 200px;
-    gap: 1.5rem;
-    margin: 1.5rem;
-    align-items: center;
-}
-
-.container .booksBestSeller{
-    text-align: center;
-    margin-top: 2rem;
-}
-.container .booksBestSeller a img{
-    height: 25rem;
-
-}
-.container .booksBestSeller a:hover img{
-    transform: scale(.9);
-
-}
-
-.container .booksBestSeller .wrapper{
-    display: grid;
-    grid-template-columns: 200px 200px 200px 200px 200px;
-    gap: 1.5rem;
-    margin: 1.5rem;
-    align-items: center;
-}
-.bookimg{
-    width: 8rem;
-    height:0.2rem;
-} */
-
-/**/
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 *{
     margin: 0px;
@@ -49,7 +15,7 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 10vh;
-
+    width: 100%;
 }
 
 .nav{
@@ -115,12 +81,15 @@ body{
 /*                    Navigation bar ends here                    */
 
 section{
-    padding:2rem;
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
 }
 
 .container{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1 1/2;
+    grid-row: 1/2;
     gap: 1rem;
 }
 .title{
@@ -133,12 +102,15 @@ section{
 }
 
 .home .booksBestSeller{
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
     position: relative;
-    display:flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 2rem;
-    margin-top: 8.6rem;
+    margin-top: 7rem;
+}
+
+.booksBestSeller::-webkit-scrollbar {
+    display: none;
 }
 
 hr{
@@ -189,14 +161,17 @@ a{
 
 .shelf{
     width:100%;
-    margin-top: -3rem;
+    margin-top: -4rem;
+    grid-area: right;
+    position: relative;
 }
 
 .scroll-button-left{
     position: absolute;
-    left: 0rem;
-    top: 1rem;
-    z-index: 1;
+    left: 48%;
+    top: 46.5%;
+    transform: translateY(-50%);
+    z-index: 3;
     height: 13rem;
     width: 1.5rem;
     background-color: transparent;
@@ -207,9 +182,10 @@ a{
 
 .scroll-button-right{
     position: absolute;
-    right: 0rem;
-    top: 1rem;
-    z-index: 1;
+    right: 0;
+    top: 46.5%;
+    transform: translateY(-50%);
+    z-index: 3;
     height: 13rem;
     width: 1.5rem;
     background-color: transparent;
@@ -221,5 +197,19 @@ a{
 .scroll-button:hover{
     background: rgba(221, 161, 94, .6);
     color: rgba(40, 54, 24, 1.0);
+}
+
+.bookSlider{
+    padding: 5px;
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    position: relative;
+    margin-top: 7rem;
+    border-style: solid;
+}
+
+html::-webkit-scrollbar{
+    display:none;
 }
 
