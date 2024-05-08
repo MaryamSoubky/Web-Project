@@ -53,8 +53,20 @@ body{
     color: #fefae0;
     padding-bottom:15px;/* padding-top: -5px;*/
     margin:0px 25px ;
+}  
+.nav-button .btn a {
+    text-decoration: none;
+    width: 130px;
+    height: 40px;
+    font-weight: 800;
+    color: #fefae0; /* Lgreen */
+    border-radius: 40px;
+    cursor:pointer;
+    transition: .3 ease;
+    border:none
 }
-.nav-button .btn{
+
+.nav-button .btn {
     width: 130px;
     height: 40px;
     font-weight: 800;
@@ -64,7 +76,6 @@ body{
     cursor:pointer;
     transition: .3 ease;
     border:none
-
 }
 #signUpBtn{
     margin-left: 15px;   
@@ -72,4 +83,6 @@ body{
 .btn:hover{
     background: rgba(221,161,94,0.6);
 }
-
+.btn:hover a{
+text-decoration: none;
+}
