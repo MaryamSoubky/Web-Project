@@ -4,38 +4,35 @@
 <head>
      <meta charset="UTF-8">
      <meta name="author" content="Maryam Soubky">
-     <meta name="description" content="This is web page for an online bookstore.">
+     <meta name="description" content="This is a web page for an online bookstore.">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="icon" href="Pictures/booksIcon.png" type="image/x-icon">
      <title>Bookly</title>
-     <link rel="stylesheet" href="main.css">
+     <link rel="icon" href="../Pictures/booksIcon.png" type="image/x-icon">
+     <link rel="stylesheet" href="../CSS/main.css">
+     <link rel="stylesheet" href="../CSS/footer.css">
+     <link rel="stylesheet" href="../CSS/nav.css">
      <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
 </head>
 
 <body>
      <header>
-          <div class="wrapper">
-               <nav class="nav">
-                    <div class="navlogo">
-                         <p>Bookly</p>
-                    </div>
-                    <div class="nav-menu">
-                         <ul>
-                              <li><a href="#" class="link active">Home</a></li>
-                              <li><a href="#" class="link">Shop</a></li>
-                              <li><a href="Aboutuspage.html" class="link">About</a></li>
-                              <li><a href="index.html" class="link">Contact us</a></li>
-                         </ul>
-                    </div>
-                    <div class="nav-button">
-                         <button class="btn" id="loginBtn">Sign In</button>
-                         <button class="btn" id="signUpBtn">Sign Up</button>
-                    </div>
-                    <div class="nav-menu-btn">
-                         <i class='bx bx-menu'></i>
-                    </div>
-               </nav>
+          <nav class="nav">
+               <div class="navlogo">
+                    <p>Bookly</p>
+               </div>
+               <div class="nav-menu">
+                    <ul>
+                         <li><a href="main.html" class="link active">Home</a></li>
+                         <li><a href="shopPage.html" class="link">Shop</a></li>
+                         <li><a href="blog page.html" class="link">Blog</a></li>
+                         <li><a href="Aboutuspage.html" class="link">About</a></li>
+                         <li><a href="contact us page.html" class="link">Contact us</a></li>
+                    </ul>
+               </div>
+               <div class="nav-button">
+                    <button class="btn" id="loginBtn"><a href="/html/signIn.html">Sign In</a></button>
+                    <button class="btn" id="signUpBtn"> <a href="/html/signUp.html">Sign Up</a></button>
+          </nav>
      </header>
      <section class="home">
           <div class="container">
@@ -43,23 +40,24 @@
                     <h1 class="title">Best Sellers</h1>
                     <hr>
                     <p class="p-bestseller">Check out the new best sellers of the week!</p>
-                    <button class="shop-button">Shop Now</button>
+                    <button class="shop-button"><a href="shopPage.html">Shop Now</a></button>
                </div>
                <button class="scroll-button-left scroll-button">&lt;</button>
                <button class="scroll-button-right scroll-button">&gt;</button>
                <div class="booksBestSeller">
-                    <div class="card"><a href="#" class="book"><img src="Pictures/FunnyStory.jpg" class="bookimg"></a>
+                    <div class="card"><a href="#" class="book"><img src="../Pictures/FunnyStory.jpg"
+                                   class="bookimg"></a>
                     </div>
-                    <div class="card"><a href="#" class="book"><img src="Pictures/TheWomen.jpg" class="bookimg"></a>
+                    <div class="card"><a href="#" class="book"><img src="../Pictures/TheWomen.jpg" class="bookimg"></a>
                     </div>
-                    <div class="card"><a href="#" class="book"><img src="Pictures/ACourtOfThornsAndRoses.jpg"
+                    <div class="card"><a href="#" class="book"><img src="../Pictures/ACourtOfThornsAndRoses.jpg"
                                    class="bookimg"></a></div>
-                    <div class="card"><a href="#" class="book"><img src="Pictures/ACalamityOfSouls.jpg"
+                    <div class="card"><a href="#" class="book"><img src="../Pictures/ACalamityOfSouls.jpg"
                                    class="bookimg"></a></div>
-                    <div class="card"><a href="#" class="book"><img src="Pictures/TheConvenantOfWater.jpg"
+                    <div class="card"><a href="#" class="book"><img src="../Pictures/TheConvenantOfWater.jpg"
                                    class="bookimg"></a></div>
                </div>
-               <img src="Pictures/shelf.png" class="shelf">
+               <img src="../Pictures/shelf.png" class="shelf">
           </div>
      </section>
      <section class="shop">
@@ -68,7 +66,7 @@
                <div class="bookSlider">
                     <div class="bookBox">
                          <div class="book">
-                              <img src="Pictures/Wonder.jpg" class="bookimg">
+                              <img src="../Pictures/Wonder.jpg" class="bookimg">
                          </div>
                          <div class="bookInfo">
                               <h3>Wonder</h3>
@@ -83,7 +81,7 @@
                               <a href="#" class="fas fa-eye"></a>
                          </div>
                          <div class="book">
-                              <img src="Pictures/Wonder.jpg" class="bookimg">
+                              <img src="../Pictures/Wonder.jpg" class="bookimg">
                          </div>
                          <div class="bookInfo">
                               <h3>Wonder</h3>
@@ -98,7 +96,7 @@
                               <a href="#" class="fas fa-eye"></a>
                          </div>
                          <div class="book">
-                              <img src="Pictures/Wonder.jpg" class="bookimg">
+                              <img src="../Pictures/Wonder.jpg" class="bookimg">
                          </div>
                          <div class="bookInfo">
                               <h3>Wonder</h3>
@@ -113,7 +111,7 @@
                               <a href="#" class="fas fa-eye"></a>
                          </div>
                          <div class="book">
-                              <img src="Pictures/Wonder.jpg" class="bookimg">
+                              <img src="../Pictures/Wonder.jpg" class="bookimg">
                          </div>
                          <div class="bookInfo">
                               <h3>Wonder</h3>
@@ -124,7 +122,34 @@
                </div>
           </div>
      </section>
-     <script src="main.js"></script>
+     <footer class="footer">
+          <div class="social">
+               <a href="#"><i class="fab fa-instagram"></i></a>
+               <a href="#"><i class="fab fa-facebook"></i></a>
+               <a href="#"><i class="fab fa-threads"></i></a>
+               <a href="#"><i class="fab fa-tiktok"></i></a>
+          </div>
+          <ul class="list">
+               <li>
+                    <a href="main.html">Home</a>
+               </li>
+               <li>
+                    <a href="Aboutuspage.html">about us</a>
+               </li>
+               <li>
+                    <a href="shopPage.html">Shop</a>
+               </li>
+
+               <li>
+                    <a href="#">Terms</a>
+               </li>
+
+          </ul>
+          <p class="copyright">
+               &copy; BOOKLY </p>
+
+     </footer>
+     <script src="../JS/main.js"></script>
 </body>
 
 </html>
