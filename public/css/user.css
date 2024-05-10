@@ -1,0 +1,43 @@
+body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #fefae0ff;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #283618ff;
+    padding-top: 20px;
+    transition: left 0.5s ease; /* Added transition */
+}
+
+.sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #fefae0ff;
+    display: block;
+}
+
+.sidebar a:hover {
+    background-color: #606c38ff;
+}
+#sidebar-toggle {
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #bc6c25ff;;
+}
+#user-profile {
+    display: none; /* Initially hidden */
+}
+
