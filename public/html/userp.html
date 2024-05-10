@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" type="text/css" href="../CSS/userp.css">
+</head>
+
+<body>
+     <div id="user-profile">
+          <h1>User Profile</h1>
+          <p>Name: <span id="profile-name">user</span></p>
+          <p>Email: <span id="profile-email">user@gmail.com</span></p>
+     </div>
+     <div id="edit-profile-form">
+          <h1>Edit Profile</h1>
+          <form id="profile-form">
+               <label for="name">Name:</label>
+               <input type="text" id="name" name="name" placeholder="Enter your name" required><br><br>
+
+               <label for="email">Email:</label>
+               <input type="email" id="email" name="email" placeholder="Enter your email" required><br><br>
+
+               <label for="password">Password:</label>
+               <input type="password" id="password" name="password" placeholder="Enter your password" required><br><br>
+
+               <input type="submit" value="Update Profile">
+          </form>
+     </div>
+     <script src="../js/userp.js"></script>
+     <script src="../js/Userprofile.js"></script>
+</body>
+
+</html>
