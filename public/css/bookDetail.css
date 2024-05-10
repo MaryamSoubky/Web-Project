@@ -180,7 +180,7 @@ html::-webkit-scrollbar-thumb{
 
 #bookDetails .single-book-image{
 
-    width:30%;
+    width:23%;
     margin-top:50px;
     margin-left: 70px;
 
@@ -205,22 +205,26 @@ html::-webkit-scrollbar-thumb{
 
 #bookDetails .single-book-details {
     width:50%;
-    padding-top:40px;
-    padding-left:40px;
+    padding-top:4%;
+    padding-left:6%;
     font-size:20px;
+    margin-bottom:10%;
 }
 
 #bookDetails .single-book-details h6 {
-    font-size:50px;
+    font-size:25px;
 }
 
 #bookDetails .single-book-details h4{
     padding:40px 0 20px 0;
-    font-size:50px;
+    font-size:25px;
+    margin-bottom:0.2%;
 }
 
 #bookDetails .single-book-details h2{
-    font-size:55px;
+    margin-top:2%;
+    font-size:30px;
+    margin-bottom: 4%;
 }
 
 #bookDetails .single-book-details input{
@@ -228,12 +232,12 @@ html::-webkit-scrollbar-thumb{
    height:47px;
    padding-left:10px;
    font-size:16px;
-   margin-right: 10px;
-   margin-left:3px;
+   margin-right: 0.5%;
+   margin-left:0.5%;
    border:1px solid black;
    border-radius: 10px;
-   height:50px;
-   width:60px;
+   height:40px;
+   width:50px;
 }
 
 #bookDetails .single-book-details input:hover{
@@ -247,13 +251,13 @@ html::-webkit-scrollbar-thumb{
 
 #bookDetails .single-book-details button{
     justify-content: space-between;
-    font-size:20px;
+    font-size:17px;
     background:#606c38;
     color:#fff;
     border-radius: 10px;
-    width:200px;
-    height:50px;
-    margin-left:5%;
+    width:23%;
+    height:7%;
+    margin-left:2%;
     cursor:pointer;
  }
 
@@ -262,9 +266,8 @@ html::-webkit-scrollbar-thumb{
  }
 
  #bookDetails .single-book-details span{
-    font-size:33px;
-    line-height:46px;
+    font-size:20px;
+    line-height:43px;
  }
-
 
 

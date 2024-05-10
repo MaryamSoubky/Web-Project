@@ -236,7 +236,7 @@ html::-webkit-scrollbar-thumb{
 }
 
 #cart table thead{
-    border:1px solid #e2e9e1;
+    border:1px solid black;
     border-left:none;
     border-right:none;
 }
@@ -261,7 +261,7 @@ html::-webkit-scrollbar-thumb{
 }
 
 #cart table thead tr td{
-    font-size:19px;
+    font-size:17.5px;
 }
 
 /* Cart Totals Design */
@@ -306,7 +306,7 @@ html::-webkit-scrollbar-thumb{
 
 #subtotal table td{
     width:50%;
-    border:1px solid #e2e9e1;
+    border:1px solid black;
     padding: 10px;
     font-size:20px;
 }
