@@ -1,64 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog Section</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="blog page.css">
-    <link rel="stylesheet" href="C:\New folder\footer.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 </head>
-<body>
 
+<body>
     <header>
         <h1>Blog Section</h1>
     </header>
 
     <main id="blog">
-        <section class="blog-box">
-            <div class="blog-img">
-                <img src="images/blog-1.jpg" alt="Blog Image 1">
+        <section>
+            <h2>Fantasy</h2>
+            <div class="swiper-container fantasy-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide blog-box">
+                        <div class="blog-img">
+                            <img src="images/blog-1.f.jpg" alt="Blog Image 1">
+                        </div>
+                        <div class="blog-details">
+                            <h3>Shadow of the Winter Moon: Book One of the Kraven Kronicles</h3>
+                            <p class="hiddenParagraph" style="display: none;">"Shadow of the Winter Moon: Book One of the Kraven Kronicles" invites readers into an enchanting realm brimming with adventure and magic. As the story unfolds, readers are transported to a world where mysterious forces and ancient secrets shape destinies. Amidst the captivating landscapes and richly drawn characters, a tale of bravery, discovery, and the quest for truth unfolds, promising an immersive journey into a fantastical realm filled with danger and intrigue.</p>
+                            <a href="#" class="readMore">Read More</a>
+                            <a href="#" class="showLess" style="display: none;">Show Less</a>
+                        </div>
+                        <div class="blog-date">
+                            <span>13/01</span>
+                        </div>
+                    </div>
+                    <div class="swiper-slide blog-box">
+                        <div class="blog-img">
+                            <img src="images/blog-2.f.jpg" alt="Blog Image 2">
+                        </div>
+                        <div class="blog-details">
+                            <h3>Heartless Hunter: Shadows of Redemption in the Realm of Mythical Beasts</h3>
+                            <p class="hiddenParagraph" style="display: none;">In "Heartless Hunter" by Kristen Ciccarelli, follow the journey of a skilled hunter who traverses a treacherous realm haunted by mythical beasts and ancient curses. Driven by vengeance and fueled by a dark past, the hunter seeks redemption in the shadows of a world teetering on the brink of chaos. As alliances shift and betrayals loom, the hunter must confront their inner demons and unearth the truth that lies buried beneath layers of deceit and secrets. With pulse-pounding action, intricate world-building, and a cast of unforgettable characters, "Heartless Hunter" is a gripping tale of courage, sacrifice, and the pursuit of justice in a land where every step could lead to salvation or damnation.</p>
+                            <a href="#" class="readMore">Read More</a>
+                            <a href="#" class="showLess" style="display: none;">Show Less</a>
+                        </div>
+                        <div class="blog-date">
+                            <span>20/02</span>
+                        </div>
+                    </div>
+                    <div class="swiper-slide blog-box">
+                        <div class="blog-img">
+                            <img src="images/blog-3.f.jpg" alt="Blog Image 3">
+                        </div>
+                        <div class="blog-details">
+                            <h3>Magical Realms Revisited: 'Wendy and the Lost Girls' and the Return to Neverland</h3>
+                            <p class="hiddenParagraph" style="display: none;">"Magical Realms Revisited: 'Wendy and the Lost Girls' and the Return to Neverland" explores the enchanting narrative of Wendy Darling's return to the whimsical world of Neverland. This modern retelling of "Peter Pan" delves into themes of nostalgia, growth, and the enduring allure of fantasy. Join Wendy as she rediscovers the magic of childhood adventures and navigates the complexities of friendship, identity, and the timeless appeal of Neverland's captivating mysteries.</p>
+                            <a href="#" class="readMore">Read More</a>
+                            <a href="#" class="showLess" style="display: none;">Show Less</a>
+                        </div>
+                        <div class="blog-date">
+                            <span>10/04</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
             </div>
-            <div class="blog-details">
-                <h2>Unsilenced: A Memoir of Healing from Trauma</h2>
-                <p id="hiddenParagraph" style="display: none;">"Unsilenced: A Memoir of Healing from Trauma" is a candid account of one person's journey through trauma, offering insights into the process of healing and finding a voice after experiencing deep pain.</p>
-                <a href="#" id="readMore">Read More</a>
-                <a href="#" id="showLess" style="display: none;">Show Less</a>
-            </div>
-            <div class="blog-date">
-                <span>13/01</span>
-            </div>
-            
         </section>
-        <div class="blog-box">
-            <div class="blog-img">
-                <img src="images/blog-2.jpg"alt="">
+        <section>
+            <h2>Memoir</h2>
+            <div class="swiper-container memoir-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide blog-box">
+                        <div class="blog-img">
+                            <img src="images/blog-4.m.jpg" alt="Blog Image 4">
+                        </div>
+                        <div class="blog-details">
+                            <h3>Unsilenced: A Memoir of Healing from Trauma</h3>
+                            <p class="hiddenParagraph" style="display: none;">"Unsilenced: A Memoir of Healing from Trauma" is a candid account of one person's journey through trauma, offering insights into the process of healing and finding a voice after experiencing deep pain.</p>
+                            <a href="#" class="readMore">Read More</a>
+                            <a href="#" class="showLess" style="display: none;">Show Less</a>
+                        </div>
+                        <div class="blog-date">
+                            <span>30/11</span>
+                        </div>
+                    </div>
+                    <div class="swiper-slide blog-box">
+                        <div class="blog-img">
+                            <img src="images/blog-5.m.jpg" alt="Blog Image 5">
+                        </div>
+                        <div class="blog-details">
+                            <h3>Echoes of the Departed: The Dead Don't Need Reminding</h3>
+                            <p class="hiddenParagraph" style="display: none;">In "Echoes of the Departed: The Dead Don't Need Reminding," the veil between the living and the dead is thin, and the past refuses to stay buried. Set in a hauntingly atmospheric world where forgotten secrets linger in every shadow, this novel follows a protagonist haunted by memories of a tragic event. As they unravel the mysteries of their past, they uncover a web of deception, betrayal, and long-buried truths that threaten to shatter the fragile peace of their present existence. With spectral echoes guiding their journey, they must confront their own demons and navigate a landscape where the line between reality and nightmare blurs. "Echoes of the Departed" is a chilling tale of redemption, loss, and the unyielding grip of the past, reminding us that sometimes, the dead don't need reminding—they speak for themselves in whispers that echo through time.</p>
+                            <a href="#" class="readMore">Read More</a>
+                            <a href="#" class="showLess" style="display: none;">Show Less</a>
+                        </div>
+                        <div class="blog-date">
+                            <span>7/05</span>
+                        </div>
+                    </div>
+                    <div class="swiper-slide blog-box">
+                        <div class="blog-img">
+                            <img src="images/blog-6.m.jpg" alt="Blog Image 6">
+                        </div>
+                        <div class="blog-details">
+                            <h3>The Last Fire Season: A Personal and Pyronatural History</h3>
+                            <p class="hiddenParagraph" style="display: none;">"The Last Fire Season: A Personal and Pyronatural History" delves deep into the heart of wildfires, exploring their impact on both the natural world and the human psyche. Through a captivating blend of personal narrative and scientific inquiry, this hardcover offers a unique perspective on the devastating beauty and destructive power of fires. The author takes readers on a journey through the history of wildfires, tracing their origins and examining their ecological significance. With vivid storytelling and compelling anecdotes, the book provides an intimate look at the author's own experiences with wildfires, sharing moments of awe and terror as they confront the flames. "The Last Fire Season" is a powerful exploration of the complex relationship between humans and nature, shedding light on the resilience of both landscapes and the human spirit in the face of nature's fury.</p>
+                            <a href="#" class="readMore">Read More</a>
+                            <a href="#" class="showLess" style="display: none;">Show Less</a>
+                        </div>
+                        <div class="blog-date">
+                            <span>22/10</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
             </div>
-            <div class="blog-details">
-<h4 is a fantasy novel that introduces readers to a world of adventure></h4>
-<p id="hiddenParagraph" style="display: none;"></p>
-<a href="#" id="readMore">Read More</a>
-<a href="#" id="showLess" style="display: none;">Show Less</a>
-<p>"Shadow of the Winter Moon: Book One of the Kraven Kronicles" invites readers into an enchanting realm brimming with adventure and magic. As the story unfolds, readers are transported to a world where mysterious forces and ancient secrets shape destinies. Amidst the captivating landscapes and richly drawn characters, a tale of bravery, discovery, and the quest for truth unfolds, promising an immersive journey into a fantastical realm filled with danger and intrigue.</p>
-<a href="#"> read more </a>  
-            </div>
-            <h1>13/01</h1>
-        </div>
-        <div class="blog-box">
-            <div class="blog-img">
-                <img src="images/blog-3.jpg"alt="">
-            </div>
-            <div class="blog-details">
-<h4 > "Magical Realms Revisited: 'Wendy and the Lost Girls' and the Return to Neverland"</h4>
-<p>"Magical Realms Revisited: 'Wendy and the Lost Girls' and the Return to Neverland" explores the enchanting narrative of Wendy Darling's return to the whimsical world of Neverland. This modern retelling of "Peter Pan" delves into themes of nostalgia, growth, and the enduring allure of fantasy. Join Wendy as she rediscovers the magic of childhood adventures and navigates the complexities of friendship, identity, and the timeless appeal of Neverland's captivating mysteries.</p>
-<a href="#"> read more </a>  
-            </div>
-            <h1>13/01</h1>
-        </div>
-
-
+        </section>
     </main>
+
     <footer class="footer">
         <div class="social">
             <a href="#"><i class="fab fa-instagram"></i></a>
@@ -71,45 +135,104 @@
                 <a href="#">Home</a>
             </li>
             <li>
-                <a href="#">about us</a>
+                <a href="#">About Us</a>
             </li>
             <li>
                 <a href="#">Shop</a>
             </li>
-    
             <li>
                 <a href="#">Terms</a>
             </li>
-    
         </ul>
         <p class="copyright">
-            &copy;	 BOOKLY    </p>
-            <p>&copy; 2024 Your Website. All rights reserved.</p>
-        </footer>
-    
+            &copy; BOOKLY 2024 Your Website. All rights reserved.
+        </p>
+    </footer>
         
-
-    <script>
-        const hiddenParagraph = document.querySelector("#hiddenParagraph");
-        const readMore = document.querySelector("#readMore");
-        const showLess = document.querySelector("#showLess");
-
-        readMore.onclick = showHiddenParagraph;
-        showLess.onclick = hideParagraph;
-
-        function showHiddenParagraph(event) {
-            event.preventDefault();
-            hiddenParagraph.style.display = "block";
-            readMore.style.display = "none";
-            showLess.style.display = "inline-block";
-        }
-
-        function hideParagraph(event) {
-            event.preventDefault();
-            hiddenParagraph.style.display = "none";
-            readMore.style.display = "inline-block";
-            showLess.style.display = "none";
-        }
-    </script>
-</body>
-</html>
+            <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    var fantasySwiper = new Swiper('.fantasy-swiper', {
+                        slidesPerView: 1,
+                        spaceBetween: 20,
+                        navigation: {
+                            nextEl: '.swiper-button-next',
+                            prevEl: '.swiper-button-prev',
+                        },
+                        pagination: {
+                            el: '.swiper-pagination',
+                            clickable: true,
+                        },
+                        breakpoints: {
+                            640: {
+                                slidesPerView: 1,
+                                spaceBetween: 20,
+                            },
+                            768: {
+                                slidesPerView: 2,
+                                spaceBetween: 20,
+                            },
+                            1024: {
+                                slidesPerView: 3,
+                                spaceBetween: 20,
+                            },
+                        },
+                    });
+        
+                    var memoirSwiper = new Swiper('.memoir-swiper', {
+                        slidesPerView: 1,
+                        spaceBetween: 20,
+                        navigation: {
+                            nextEl: '.swiper-button-next',
+                            prevEl: '.swiper-button-prev',
+                        },
+                        pagination: {
+                            el: '.swiper-pagination',
+                            clickable: true,
+                        },
+                        breakpoints: {
+                            640: {
+                                slidesPerView: 1,
+                                spaceBetween: 20,
+                            },
+                            768: {
+                                slidesPerView: 2,
+                                spaceBetween: 20,
+                            },
+                            1024: {
+                                slidesPerView: 3,
+                                spaceBetween: 20,
+                            },
+                        },
+                    });
+        
+                    // Read More / Show Less functionality
+                    document.querySelectorAll('.readMore').forEach(function (button) {
+                        button.addEventListener('click', function (e) {
+                            e.preventDefault();
+                            var details = this.parentNode;
+                            var paragraph = details.querySelector('.hiddenParagraph');
+                            var showLess = details.querySelector('.showLess');
+                            paragraph.style.display = 'block';
+                            this.style.display = 'none';
+                            showLess.style.display = 'inline';
+                        });
+                    });
+        
+                    document.querySelectorAll('.showLess').forEach(function (button) {
+                        button.addEventListener('click', function (e) {
+                            e.preventDefault();
+                            var details = this.parentNode;
+                            var paragraph = details.querySelector('.hiddenParagraph');
+                            var readMore = details.querySelector('.readMore');
+                            paragraph.style.display = 'none';
+                            this.style.display = 'none';
+                            readMore.style.display = 'inline';
+                        });
+                    });
+                });
+            </script>
+        </body>
+        
+        </html>
+        
