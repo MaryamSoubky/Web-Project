@@ -2,112 +2,81 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif; /* Changed font to Poppins */
+    font-family: 'Poppins', sans-serif; 
 }
-
-.container {
-    margin-top: 50px;
-    min-height: 100vh;
+body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #f0f0f0;
+    min-height: 100vh;
+    background: #fefae0; 
 }
-
-.container form {
-    width: 670px;
-    height: 600px;
-    display: flex;
-    justify-content: center;
-    border-radius: 15px;
-    background: #f0f0f0;
-    backdrop-filter: blur(30px);
-    flex-wrap: wrap;
+.contact h2{
+    font-size: 40px;
+    color: #283618; 
+    text-align: center;
+    margin-bottom: 10px;
 }
-
-.container form h1 {
-    color: #bc6c25;
-    font-weight: 800;
-    line-height: 2;
-    margin-top: 20px;
-    width: 500px;
+.contact form{
+    width: 600px;
     text-align: center;
 }
-
-.container form input {
-    width: 300px;
-    height: 50px;
-    padding-left: 10px;
-    outline: none;
-    border: none;
-    font-size: 20px;
-    margin-bottom: 10px;
-    background: none;
-    border-bottom: 2px solid #606c38ff; 
-    color: #606c38ff; 
+form .input-box{
+    display: flex;
+    justify-content: space-between;
 }
-
-.container form input::placeholder {
+.input-box .input-field{
+    width: 48.5%;
+}
+.field .item{
+    width: 100%;
+    padding: 18px;
+    background: transparent;
+    border: 2px solid #606c38; 
+    outline: none;
+    border-radius: 6px;
+    font-size: 16px;
     color: #283618; 
+    margin: 12px 0;
 }
-
-.container form #LN,
-.container form #mobile {
-    margin-left: 25px;
+.field.error.item{
+    border-color: #bc6c25; 
 }
-
-.container form h4 {
-    color: #606c38;
-    font-weight: 300;
-    width: 600px;
-    margin-top: 20px;
-    font-size: 20px;
+.field.item::placeholder{
+    color: rgba(40, 54, 24, 0.5); 
 }
-
-.container form textarea {
-    background: none;
-    border: 2px solid #606c38ff; 
-    color: #606c38ff; 
-    font-weight: 200;
-    font-size: 20px;
-    padding: 10px;
-    outline: none;
-    min-height: 90px;
-    max-height: 90px;
-    min-width: 620px;
-    max-width: 620px;
+.field .error-txt {
+    font-size: 14.5px;
+    color: #bc6c25; 
+    text-align: left;
+    margin: -5px 0 10px;
+    display: none;
 }
-
-.container form #button {
+.field.error .error-txt{
+    display: block;
+}
+form .textarea-field.item{
+    resize: none;
+}
+form.textarea-field.error-txt{
+    margin-top: -10px;
+}
+form button{
+    padding: 12px 32px;
+    background: #283618;
     border: none;
-    background: #283618; 
-    border-radius: 5px;
-    margin-top: 20px;
+    outline: none;
+    border-radius: 6px;
+    box-shadow: 0 0 10px #283618; 
+    font-size: 16px;
+    color: #fefae0; 
+    letter-spacing: 1px;
     font-weight: 600;
-    font-size: 24px;
-    color: #bc6c25ff; 
-    width: 200px;
-    height: 60px;
-    padding: 0;
-    margin-bottom: 30px;
-    transition: 0.5s;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    margin-top: 20px;
+    transition: .5s;
 }
-
-.container form #button:hover {
-    background: #dda15eff; 
-    color: #dda15eff; 
-    transition: 0.5s ease-in-out;
-}
-.inputField.error input {
-    border-color: var(--error-color);
-}
-.inputField small {
-    color: var(--error-color);
-    position: absolute;
-    visibility: hidden;
-}
-
-.inputField.error small {
-    visibility: visible;
+form button:hover{
+    background: #606c38; 
+    box-shadow: none;
 }
