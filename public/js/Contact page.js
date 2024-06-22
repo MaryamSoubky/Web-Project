@@ -5,6 +5,7 @@ document.getElementById("contactForm").addEventListener("submit", function(event
     return; // If there are validation errors, stop the form submission
   }
 
+  const form = document.querySelector("form");
   const fullName = document.getElementById("name");
   const email = document.getElementById("email");
   const phone = document.getElementById("phone");
@@ -56,6 +57,9 @@ function sendEmail(bodyMessage, subject, fileName = null, base64File = null) {
           text: "Message Sent Successfully",
           icon: "success"
         });
+        const form = document.querySelector("form");
+        form.reset();
+
       } else {
         Swal.fire({
           title: "Error",
@@ -64,6 +68,8 @@ function sendEmail(bodyMessage, subject, fileName = null, base64File = null) {
         });
       }
     }
+
+
   );
 }
 
