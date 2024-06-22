@@ -1,6 +1,10 @@
 document.getElementById("contactForm").addEventListener("submit", function(event) {
   event.preventDefault(); // Prevent form from submitting the traditional way
 
+  if (!checkinputs()) {
+    return; // If there are validation errors, stop the form submission
+  }
+
   const fullName = document.getElementById("name");
   const email = document.getElementById("email");
   const phone = document.getElementById("phone");
@@ -65,18 +69,26 @@ function sendEmail(bodyMessage, subject, fileName = null, base64File = null) {
 
 function checkinputs() {
   const items = document.querySelectorAll(".item");
+  let isValid = true; // Flag to indicate if all inputs are valid
 
   for (const item of items) {
     if (item.value == "") {
       item.classList.add("error");
       item.parentElement.classList.add("error");
+      isValid = false;
+    } else {
+      item.classList.remove("error");
+      item.parentElement.classList.remove("error");
     }
+
     if (items[1].value != "") {
       checkemail();
     }
+
     items[1].addEventListener("keyup", () => {
       checkemail();
     });
+
     item.addEventListener("keyup", () => {
       if (item.value != "") {
         item.classList.remove("error");
@@ -84,9 +96,12 @@ function checkinputs() {
       } else {
         item.classList.add("error");
         item.parentElement.classList.add("error");
+        isValid = false;
       }
     });
   }
+
+  return isValid;
 }
 
 function checkemail() {
@@ -105,5 +120,6 @@ function checkemail() {
   } else {
     email.classList.remove("error");
     email.parentElement.classList.remove("error");
+    errortxtemail.innerText = ""; // Clear any previous error text
   }
 }
