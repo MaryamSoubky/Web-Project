@@ -6,6 +6,7 @@
   <title>Contact</title>
   <link rel="stylesheet" href="../CSS/contact us page.css" />
   <link rel="stylesheet" href="../css/nav.css" />
+  <link rel="stylesheet" href="/contact us page.css" />
 </head>
 <body>
   <nav class="nav">
@@ -14,54 +15,52 @@
     </div>
     <div class="nav-menu">
         <ul>
-            <li><a href="#"class="link active">Home</a></li>
-            <li><a href="#"class="link">Shop</a></li>
-            <li><a href="#"class="link">About</a></li>
-            <li><a href="#"class="link">contact us</a></li>
+            <li><a href="#" class="link active">Home</a></li>
+            <li><a href="#" class="link">Shop</a></li>
+            <li><a href="#" class="link">About</a></li>
+            <li><a href="#" class="link">Contact Us</a></li>
         </ul>
     </div>
     <div class="nav-button">
-        <button class="btn" id="loginBtn" ><a href="signIn.html">Sign In</a></button>
-        <button class="btn" id="signUpBtn">  <a href="signUp.html">Sign Up</a></button>
-</nav>
+        <button class="btn" id="loginBtn"><a href="signIn.html">Sign In</a></button>
+        <button class="btn" id="signUpBtn"><a href="signUp.html">Sign Up</a></button>
+    </div>
+  </nav>
 
   <section class="contact">
     <h2>Contact Me!</h2>
-    
-    <form action="#">
+    <form id="contactForm">
       <div class="input-box">
         <div class="input-field field">
-          <input type="text" placeholder="Full Name" id="name" 
-          class="item" autocomplete="off">
-          <div class="error-txt">Full name can't be blank</div> 
+          <input type="text" placeholder="Full Name" id="name" class="item" autocomplete="off" >
+          <div class="error-txt">Full name can't be blank</div>
         </div>
         <div class="input-field field">
-          <input type="email" placeholder="Email Address" id="email"
-           class="item" autocomplete="off">
-          <div class="error-txt email">Email address can't be blank</div> 
+          <input type="email" placeholder="Email Address" id="email" class="item" autocomplete="off" >
+          <div class="error-txt email">Email address can't be blank</div>
         </div>
       </div>
       <div class="input-box">
         <div class="input-field field">
-          <input type="text" placeholder="Phone Number" id="phone" 
-          class="item" autocomplete="off">
-          <div class="error-txt">Phone number can't be blank</div> 
+          <input type="text" placeholder="Phone Number" id="phone" class="item" autocomplete="off" >
+          <div class="error-txt">Phone number can't be blank</div>
         </div>
         <div class="input-field field">
-          <input type="text" placeholder="Subject" id="subject" 
-          class="item" autocomplete="off">
-          <div class="error-txt">Subject can't be blank</div> 
+          <input type="text" placeholder="Subject" id="subject" class="item" autocomplete="off" >
+          <div class="error-txt">Subject can't be blank</div>
         </div>
       </div>
       <div class="textarea-field field">
-        <textarea id="message" cols="30" rows="10" 
-        placeholder="Your message" class="item" 
-        autocomplete="off"></textarea>
-        <div class="error-txt">Message can't be blank</div> 
+        <textarea id="message" cols="30" rows="10" placeholder="Your message" class="item" autocomplete="off" ></textarea>
+        <div class="error-txt">Message can't be blank</div>
       </div>
-      <button type="submit"> Send Message </button>
+      <div class="input-field field">
+        <input type="file" id="file" class="item" name="file">
+      </div>
+      <button type="submit">Send Message</button>
     </form>
   </section>
+
   <script src="https://smtpjs.com/v3/smtp.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="../js/Contact page.js"></script>
