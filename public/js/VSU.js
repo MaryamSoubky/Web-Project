@@ -1,10 +1,18 @@
 const form = document.getElementById('form');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
+const ConfirmPassword = document.getElementById('ConfirmPassword');
 const FN = document.getElementById('FN');
 const LN = document.getElementById('LN');
 
 
+
+form.addEventListener('submit', function(e) {
+  if (!termsCheckbox.checked) {
+    e.preventDefault();
+    alert('Please accept the terms and conditions before submitting the form.');
+  }
+});
 // Show input error message
 function showError(input, message) {
   const formControl = input.parentElement;
@@ -73,15 +81,28 @@ function getFieldName(input) {
   return input.id.charAt(0).toUpperCase() + input.id.slice(1);
 }
 
+
+/*
+function closeTab() {
+  window.close(); // Close the current tab or window
+}
+
+function uncheckCheckbox() {
+  const checkbox = document.getElementById('R-Check');
+  checkbox.checked = false; // Uncheck the checkbox
+}*/
+
 // Event listeners
 form.addEventListener('submit', function(e) {
   e.preventDefault();
 
-  if(checkRequired([FN,LN,email, password])){
+  if(checkRequired([FN,LN,email, password,ConfirmPassword])){
+    checkPasswordsMatch(password,ConfirmPassword)
     checkLength(password, 6, 25);
     checkEmail(email);
     checkLength(FN, 3, 15);
     checkLength(LN, 3, 15);
+
   }
   /*if(checkRequired([email, password])){
     checkLength(password, 6, 25);
@@ -90,3 +111,14 @@ form.addEventListener('submit', function(e) {
 
 });
 
+
+
+
+
+acceptBtn.addEventListener('click', function() {
+  window.close();
+});
+
+declineBtn.addEventListener('click', function() {
+  termsCheckbox.checked = false;
+});
