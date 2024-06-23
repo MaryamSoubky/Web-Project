@@ -174,7 +174,7 @@ html::-webkit-scrollbar-thumb{
 /* Banner design */
 
 #banner {
-    background-image: url("../bannerImages/Banner.png");
+    background-image: url("/Banner.png");
     width:100%;
     height: 21vh;
     background-size:cover;
