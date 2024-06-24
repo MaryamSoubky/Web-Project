@@ -36,7 +36,7 @@ main#blog {
 section h2 {
     font-size: 1.8em;
     color: #283618;
-    margin-bottom: 20px; /* Increase margin below section title */
+    margin-bottom: 20px; 
 }
 
 section {
