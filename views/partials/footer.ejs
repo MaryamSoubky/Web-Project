@@ -5,41 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Document</title>
-
+   
 </head>
 <body>
     <footer class="footer">
-    <div class="social">
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-threads"></i></a>
-        <a href="#"><i class="fab fa-tiktok"></i></a>
-    </div>
-    <ul class="list">
-        <li>
-            <a href="#">Home</a>
-        </li>
-        <li>
-            <a href="#">about us</a>
-        </li>
-        <li>
-            <a href="#">Shop</a>
-        </li>
-
-        <li>
-            <a href="#">Terms</a>
-        </li>
-
-    </ul>
-    <a  href="admin" class="copyright">
-        &copy;	 BOOKLY    </p>
-    </a>
-
+        <div class="social">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-threads"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+        </div>
+        <ul class="list">
+            <li><a href="">Home</a></li>
+            <li><a href="">About Us</a></li>
+            <li><a href="">Shop</a></li>
+            <li><a href="Terms">Terms</a></li>
+        </ul>
+        <a href="admin" class="copyright">
+            &copy; BOOKLY
+        </a>
+        <div id="google_translate_element" style="display: none;"></div>
+        <div id="google_translate_element" style="display: none;"></div>
+        <div class="custom-translate">
+            <select onchange="translateLanguage(this.value)">
+                <option value="">Select Language</option>
+                <option value="en">English</option>
+                <option value="ar">Arabic</option>
+                <option value="de">Deutsch</option>
+                <!-- Add more languages as needed -->
+            </select>
+        </div>
     </footer>
 
-<script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
-<script src="https://mediafiles.botpress.cloud/f933f12d-1409-439a-8b7b-b8a48a24969b/webchat/config.js" defer></script>
-    
+    <!-- API Google Translate -->
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
+    <script>
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+        }
+
+        function translateLanguage(language) {
+            var select = document.querySelector('.goog-te-combo');
+            if (select) {
+                select.value = language;
+                select.dispatchEvent(new Event('change'));
+            }
+        }
+    </script>
+    <style>
+        /* Hide the Google Translate toolbar and iframe */
+        .VIpgJd-ZVi9od-ORHb-OEVmcd.skiptranslate{
+            display: none ;
+        }
+        body {
+            top: 0px;
+        }
+        /* Custom style for the translate dropdown */
+        .custom-translate {
+            margin: 20px;
+        }
+        .custom-translate select {
+            padding: 10px;
+            border-radius: 60px;
+            
+            border: 2px double #283618;
+        }
+    </style>
+
+    <!--AI BOTTT API-->
+    <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+    <script src="https://mediafiles.botpress.cloud/f933f12d-1409-439a-8b7b-b8a48a24969b/webchat/config.js" defer></script>
 </body>
 </html>
