@@ -36,7 +36,7 @@
 
 <div class="icons">
 <div id="search-btn" class="fas fa-search"></div>
-<a href="wishlist.html" class="fas fa-heart"></a>
+<a href="/wishlist" class="fas fa-heart"></a>
 <a href="/cart" class="fas fa-shopping-cart"></a>
 <a href="userpro.html" class="fas fa-cog"></a>
 <!--<div id="logout-btn" class="fas fa-sign-out-alt"></div>-->
@@ -51,7 +51,7 @@
 
         <div class="nav-menu">
                 <a href="#"class="link active">Home</a>
-                <a href="/" class="link">Shop</a>
+                <a href="/shopPage" class="link">Shop</a>
                 <a href="#"class="link">About</a>
                 <a href="#"class="link">contact us</a>
         </div>
@@ -68,327 +68,76 @@
 <p>There is no friend as loyal as a book.</p>
 </div>
 
-<!-- Creating the books available for sale in the shopping section using cards . -->
+<!-- Creating the books available for sale in the shopping section using cards . --> <!-- Let us comment my template -->
+
 
 <div id="product1">
 
-<!-- Creating a book card -->
-<div id="firstSlot" class="pro-container">
-<a href="bookDetail.html">
-    <div class="pro">
-        <!-- Book Image -->
-        <img src="/Book1.jpg" alt=""> <!--WWWWWWAAAAAAARRRRRRNNNNNNIIIIIINNNNNNGGGGGGG-->
-        <!-- Book Category & Title -->
-        <div class="des">
-            <span>Comedy</span>
-            <h5>Diary Of A Wimpy Kid</h5>
+    <div id="firstSlot" class="pro-container">
+        <% if(books.length >= 6) { %>
+        <% books.forEach(book => { %>
+        <a href="/bookDetails/<%=book._id%>">
+            <div class="pro">
+                <!-- Book Image -->
+                <img src="/<%= book.bookCover %>" alt="">
+                <!-- Book Category & Title -->
+                <div class="des">
+                    <span><%= book.bookCategory %></span>
+                    <h5><%= book.bookTitle %></h5>
+        
+                    <!-- Star icons for review (rating) -->
+                    <div class="star">
+                        <% for(let i = 0; i < 5 ; i++){ %>
+                            <i class="fas fa-star"></i>
+                   <%     } %>
+                    </div>
+                    <h4>$<%= book.bookPrice %></h4> <!-- Price -->
+                    <a href="#" class="shopCart">
+                    <form action="/cart" method="POST">
+<input type ="hidden" name="userId" value="6679bdafae31fc98ac456aee">
+<input type="hidden" name="bookId" value="<%= book._id %>">
+<button type="submit"><i class="fas fa-shopping-cart cart"></i></button> <!-- Shopping cart icon -->
 
-            <!-- Star icons for review (rating) -->
-            <div class="star">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
+                    </form>
+                    </a>
+                </div>
             </div>
-            <h4>$25</h4> <!-- Price -->
-            <a href="#"><i class="fas fa-shopping-cart cart"></i></a> <!-- Shopping cart icon -->
-        </div>
-    </div>
-</a>
-
-        <!--Copying & Pasting our card -->
-        <a href="bookDetail.html">
-        <div class="pro">
-        <!-- Book Image -->
-        <img src="/Book6.jpeg" alt=""> <!--WWWWWWAAAAAAARRRRRRNNNNNNIIIIIINNNNNNGGGGGGG-->
-        <!-- Book Category & Title -->
-        <div class="des">
-            <span>Comedy</span>
-            <h5>Diary Of A Wimpy Kid</h5>
-
-            <!-- Star icons for review (rating) -->
-            <div class="star">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-            </div>
-            <h4>$25</h4> <!-- Price -->
-            <a href="#"><i class="fas fa-shopping-cart cart"></i></a> <!-- Shopping cart icon -->
-        </div>
-    </div>
-</a>
-
-    <a href="bookDetail.html">
-    <div class="pro">
-        <!-- Book Image -->
-        <img src="/Book5.jpeg" alt=""> <!--WWWWWWAAAAAAARRRRRRNNNNNNIIIIIINNNNNNGGGGGGG-->
-        <!-- Book Category & Title -->
-        <div class="des">
-            <span>Comedy</span>
-            <h5>Diary Of A Wimpy Kid</h5>
-
-            <!-- Star icons for review (rating) -->
-            <div class="star">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-            </div>
-            <h4>$25</h4> <!-- Price -->
-            <a href="#"><i class="fas fa-shopping-cart cart"></i></a> <!-- Shopping cart icon -->
-        </div>
-    </div>
-</a>
-
-
-    <a href="bookDetail.html">
-    <div class="pro">
-        <!-- Book Image -->
-        <img src="/Book4.jpeg" alt="">  <!--WWWWWWAAAAAAARRRRRRNNNNNNIIIIIINNNNNNGGGGGGG-->
-        <!-- Book Category & Title -->
-        <div class="des">
-            <span>Comedy</span>
-            <h5>Diary Of A Wimpy Kid</h5>
-
-            <!-- Star icons for review (rating) -->
-            <div class="star">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-            </div>
-            <h4>$25</h4> <!-- Price -->
-            <a href="#"><i class="fas fa-shopping-cart cart"></i></a> <!-- Shopping cart icon -->
-        </div>
-    </div>
-</a>
-
-
-    <a href="bookDetail.html">
-    <div class="pro">
-        <!-- Book Image -->
-        <img src="/Book3.png" alt="">  <!--WWWWWWAAAAAAARRRRRRNNNNNNIIIIIINNNNNNGGGGGGG-->
-        <!-- Book Category & Title -->
-        <div class="des">
-            <span>Comedy</span>
-            <h5>Diary Of A Wimpy Kid</h5>
-
-            <!-- Star icons for review (rating) -->
-            <div class="star">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-            </div>
-            <h4>$25</h4> <!-- Price -->
-            <a href="#"><i class="fas fa-shopping-cart cart"></i></a> <!-- Shopping cart icon -->
-        </div>
-    </div>
-</a>
-
-
-    <a href="bookDetail.html">
-    <div class="pro">
-        <!-- Book Image -->
-        <img src="/Book2.jpg" alt="">  <!--WWWWWWAAAAAAARRRRRRNNNNNNIIIIIINNNNNNGGGGGGG-->
-        <!-- Book Category & Title -->
-        <div class="des">
-            <span>Comedy</span>
-            <h5>Diary Of A Wimpy Kid</h5>
-
-            <!-- Star icons for review (rating) -->
-            <div class="star">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-            </div>
-            <h4>$25</h4> <!-- Price -->
-            <a href="#"><i class="fas fa-shopping-cart cart"></i></a> <!-- Shopping cart icon -->
-        </div>
-    </div>
-</a>
-
-<a href="bookDetail.html">
-    <div class="pro">
-        <!-- Book Image -->
-        <img src="/Book7.jpeg" alt="">  <!--WWWWWWAAAAAAARRRRRRNNNNNNIIIIIINNNNNNGGGGGGG-->
-        <!-- Book Category & Title -->
-        <div class="des">
-            <span>Comedy</span>
-            <h5>Diary Of A Wimpy Kid</h5>
-
-            <!-- Star icons for review (rating) -->
-            <div class="star">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-            </div>
-            <h4>$25</h4> <!-- Price -->
-            <a href="#"><i class="fas fa-shopping-cart cart"></i></a> <!-- Shopping cart icon -->
-        </div>
-    </div>
-</a>
-
-<a href="bookDetail.html">
-    <div class="pro">
-        <!-- Book Image -->
-        <img src="/Book8.jpg" alt="">  <!--WWWWWWAAAAAAARRRRRRNNNNNNIIIIIINNNNNNGGGGGGG-->
-        <!-- Book Category & Title -->
-        <div class="des">
-            <span>Comedy</span>
-            <h5>Diary Of A Wimpy Kid</h5>
-
-            <!-- Star icons for review (rating) -->
-            <div class="star">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-            </div>
-            <h4>$25</h4> <!-- Price -->
-            <a href="#"><i class="fas fa-shopping-cart cart"></i></a> <!-- Shopping cart icon -->
-        </div>
-    </div>
-</a>
-
-<a href="bookDetail.html">
-    <div class="pro">
-        <!-- Book Image -->
-        <img src="/Book9.jpg" alt="">  <!--WWWWWWAAAAAAARRRRRRNNNNNNIIIIIINNNNNNGGGGGGG-->
-        <!-- Book Category & Title -->
-        <div class="des">
-            <span>Comedy</span>
-            <h5>Diary Of A Wimpy Kid</h5>
-
-            <!-- Star icons for review (rating) -->
-            <div class="star">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-            </div>
-            <h4>$25</h4> <!-- Price -->
-            <a href="#"><i class="fas fa-shopping-cart cart"></i></a> <!-- Shopping cart icon -->
-        </div>
-    </div>
-</a>
-
-
-
+        </a>
+        <% }) %>
+        <%}%>
 </div>
 
 <!-- This is the second slot container -->
-
+<!--
 <div id="secondSlot" class="pro-container">
-
-    <a href="bookDetail.html">
-        <div class="pro">
-            <!-- Book Image -->
-            <img src="/Book1.jpg" alt=""> <!--WWWWWWAAAAAAARRRRRRNNNNNNIIIIIINNNNNNGGGGGGG-->
-            <!-- Book Category & Title -->
-            <div class="des">
-                <span>Comedy</span>
-                <h5>Diary Of A Wimpy Kid</h5>
-    
-                <!-- Star icons for review (rating) -->
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>$25</h4> <!-- Price -->
-                <a href="#"><i class="fas fa-shopping-cart cart"></i></a> <!-- Shopping cart icon -->
-            </div>
-        </div>
-    </a>
-    
-            <!--Copying & Pasting our card -->
-            <a href="bookDetail.html">
-            <div class="pro">
-            <!-- Book Image -->
-            <img src="/Book6.jpeg" alt=""> <!--WWWWWWAAAAAAARRRRRRNNNNNNIIIIIINNNNNNGGGGGGG-->
-            <!-- Book Category & Title -->
-            <div class="des">
-                <span>Comedy</span>
-                <h5>Diary Of A Wimpy Kid</h5>
-    
-                <!-- Star icons for review (rating) -->
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>$25</h4> <!-- Price -->
-                <a href="#"><i class="fas fa-shopping-cart cart"></i></a> <!-- Shopping cart icon -->
-            </div>
-        </div>
-    </a>
-    
-        <a href="bookDetail.html">
-        <div class="pro">
-            <!-- Book Image -->
-            <img src="/Book5.jpeg" alt=""> <!--WWWWWWAAAAAAARRRRRRNNNNNNIIIIIINNNNNNGGGGGGG-->
-            <!-- Book Category & Title -->
-            <div class="des">
-                <span>Comedy</span>
-                <h5>Diary Of A Wimpy Kid</h5>
-    
-                <!-- Star icons for review (rating) -->
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>$25</h4> <!-- Price -->
-                <a href="#"><i class="fas fa-shopping-cart cart"></i></a> <!-- Shopping cart icon -->
-            </div>
-        </div>
-    </a>
     
     
         <a href="bookDetail.html">
         <div class="pro">
+        -->
             <!-- Book Image -->
-            <img src="/Book4.jpeg" alt="">  <!--WWWWWWAAAAAAARRRRRRNNNNNNIIIIIINNNNNNGGGGGGG-->
+       <!--   <img src="/Book4.jpeg" alt=""> -->  
             <!-- Book Category & Title -->
-            <div class="des">
-                <span>Comedy</span>
+       <!--     <div class="des">
+                <span>Comedy</span>       
                 <h5>Diary Of A Wimpy Kid</h5>
-    
+       -->
                 <!-- Star icons for review (rating) -->
-                <div class="star">
+         <!--       <div class="star">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                 </div>
-                <h4>$25</h4> <!-- Price -->
-                <a href="#"><i class="fas fa-shopping-cart cart"></i></a> <!-- Shopping cart icon -->
-            </div>
+                <h4>$25</h4> -->    <!-- Price -->
+          <!--      <a href="#"><i class="fas fa-shopping-cart cart"></i></a>  --> <!-- Shopping cart icon -->
+          <!--  </div>
         </div>
     </a>
 
 
-</div>
+</div> -->
 
 </div>
 
