@@ -1,43 +1,373 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Maryam Soubky" />
+    <meta
+      name="description"
+      content="This is a web page for an online bookstore."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookly</title>
+    <link rel="icon" href="../Pictures/booksIcon.png" type="image/x-icon" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/admin.css" />
+  </head>
 
-<head>
-     <meta charset="UTF-8">
-     <meta name="author" content="Maryam Soubky">
-     <meta name="description" content="This is a web page for an online bookstore.">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Bookly</title>
-     <link rel="icon" href="../Pictures/booksIcon.png" type="image/x-icon">
-     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-     <link rel="stylesheet" href="../CSS/admin.css">
-</head>
-
-<body>
-     <h2>Site administration</h2>
-     <h3>Authorization and Authentication</h3>
-     <table id="userTable">
+  <body>
+    <div class="sidebar">
+      <h2>Dashboard</h2>
+      <ul>
+        <li><a href="/main">Home</a></li>
+        <li><a href="/admin">Users</a></li>
+        <li><a href="/admin/books">Books</a></li>
+        <li><a href="/admin/orders">Orders</a></li>
+      </ul>
+    </div>
+    <div class="main-content">
+      <h2>Site administration</h2>
+      <h3>Authorization and Authentication</h3>
+      <table id="userTable">
+        <thead>
           <tr>
-               <th>Email Address</th>
-               <th>First Name</th>
-               <th>Last Name</th>
-               <th>Status</th>
+            <th>Email Address</th>
+            <th>First Name</th>
+            <th>Last Name</th>
           </tr>
+        </thead>
+        <tbody>
+          <!-- User rows will be inserted here by JavaScript -->
+        </tbody>
+      </table>
+
+      <div id="admin-createUsr-form">
+        <input
+          type="text"
+          name=""
+          id="admin-createUsr-firstname"
+          placeholder="Firstname"
+        />
+        <input
+          type="text"
+          name=""
+          id="admin-createUsr-lastname"
+          placeholder="lastname"
+        />
+        <input
+          type="email"
+          id="admin-createUsr-email"
+          placeholder="user email"
+        />
+        <input
+          type="password"
+          id="admin-createUsr-password"
+          placeholder="password"
+        />
+        <input
+          type="password"
+          id="admin-createUsr-Cpassword"
+          placeholder="confirm password"
+        />
+
+        <br />
+        <button id="add-user-btn">Add User</button>
+        <button id="update-user-btn">Update User</button>
+        <button id="delete-user-btn">Delete User</button>
+      </div>
+    </div>
+
+    <div id="books-section" style="display: none">
+      <h2>Books Management</h2>
+      <h3>Books List</h3>
+      <table id="booksTable">
+        <thead>
           <tr>
-               <td>maryam2204664@miuegypt.edu</td>
-               <td>Maryam</td>
-               <td>Soubky</td>
-               <td>Active</td>
+            <th>Select</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>ISBN</th>
+            <th>Price</th>
           </tr>
-     </table>
+        </thead>
+        <tbody>
+          <!-- Book rows will be inserted here by JavaScript -->
+        </tbody>
+      </table>
+    </div>
 
+    <div id="orders-section" style="display: none;">
+        <h2>Orders Management</h2>
+        <h3>Orders List</h3>
+        <table id="ordersTable">
+          <thead>
+            <tr>
+              <th>Select</th>
+              <th>Order ID</th>
+              <th>Customer</th>
+              <th>Date</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Order rows will be inserted here by JavaScript -->
+          </tbody>
+        </table>
+      </div>
+    </div>
 
-     <div id="admin-createUsr-form">
-          <input type="text" name="" id="admin-createUsr-firstname" placeholder="Firstname">
-          <input type="text" name="" id="admin-createUsr-lastname" placeholder="lastname">
-          <input type="email" id="admin-createUsr-email" placeholder="user email"><br>
-          <button id="add-user-btn">Add User</button>
-     </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Function to fetch users and populate the table
+        function fetchUsers() {
+          const xhr = new XMLHttpRequest();
+          xhr.open("GET", "/admin/users", true);
+          xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+              const users = JSON.parse(xhr.responseText);
+              const userTableBody = document.querySelector("#userTable tbody");
+              userTableBody.innerHTML = ""; // Clear any existing rows
 
+              users.map((user, index) => {
+                const userRow = document.createElement("tr");
+                userRow.innerHTML = `
+            <td>${user.email}</td>
+            <td>${user.first}</td>
+            <td>${user.last}</td>
+          `;
+                userRow.setAttribute("data-email", user.email); // Store email in row for reference
+                const selected = document.getElementsByClassName("selected");
+                userRow.addEventListener("click", function () {
+                  if (selected.length > 0) {
+                    selected[0].classList.remove("selected");
+                  }
+                  userRow.classList.toggle("selected");
+                  document.getElementById("admin-createUsr-email").value =
+                    user.email;
+                  document.getElementById("admin-createUsr-firstname").value =
+                    user.first;
+                  document.getElementById("admin-createUsr-lastname").value =
+                    user.last;
+                });
+                userTableBody.appendChild(userRow);
+              });
+            }
+          };
+          xhr.send();
+        }
 
-     <script src="../JS/admin.js"></script>
-</body>
+        /*        function fetchBooks() {
+          const xhr = new XMLHttpRequest();
+          xhr.open("GET", "/admin/books", true);
+          xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+              const books = JSON.parse(xhr.responseText);
+              const booksTableBody =
+                document.querySelector("#booksTable tbody");
+              booksTableBody.innerHTML = ""; // Clear any existing rows
+
+              books.map((book) => {
+                const bookRow = document.createElement("tr");
+                bookRow.innerHTML = `
+                  <td><input type="radio" name="selectedBook" data-title="${book.title}" data-author="${book.author}" data-isbn="${book.isbn}" data-price="${book.price}" /></td>
+                  <td>${book.title}</td>
+                  <td>${book.author}</td>
+                  <td>${book.isbn}</td>
+                  <td>${book.price}</td>
+                `;
+
+                booksTableBody.appendChild(bookRow);
+              });
+
+              // Add event listener to radio buttons
+              document
+                .querySelectorAll('input[name="selectedBook"]')
+                .forEach((radio) => {
+                  radio.addEventListener("change", function () {
+                    const selectedBook = document.querySelector(
+                      'input[name="selectedBook"]:checked'
+                    );
+                    if (selectedBook) {
+                      document.getElementById("admin-createBook-title").value =
+                        selectedBook.getAttribute("data-title");
+                      document.getElementById("admin-createBook-author").value =
+                        selectedBook.getAttribute("data-author");
+                      document.getElementById("admin-createBook-isbn").value =
+                        selectedBook.getAttribute("data-isbn");
+                      document.getElementById("admin-createBook-price").value =
+                        selectedBook.getAttribute("data-price");
+                    }
+                  });
+                });
+            }
+          };
+          xhr.send();
+        } */
+
+/*        function fetchOrders() {
+          const xhr = new XMLHttpRequest();
+          xhr.open("GET", "/admin/orders", true);
+          xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+              const orders = JSON.parse(xhr.responseText);
+              const ordersTableBody = document.querySelector("#ordersTable tbody");
+              ordersTableBody.innerHTML = ""; // Clear any existing rows
+
+              orders.map((order) => {
+                const orderRow = document.createElement("tr");
+                orderRow.innerHTML = `
+                  <td><input type="radio" name="selectedOrder" data-id="${order.id}" data-customer="${order.customer}" data-date="${order.date}" data-total="${order.total}" /></td>
+                  <td>${order.id}</td>
+                  <td>${order.customer}</td>
+                  <td>${order.date}</td>
+                  <td>${order.total}</td>
+                `;
+
+                ordersTableBody.appendChild(orderRow);
+              });
+
+              // Add event listener to radio buttons
+              document.querySelectorAll('input[name="selectedOrder"]').forEach((radio) => {
+                radio.addEventListener("change", function () {
+                  const selectedOrder = document.querySelector('input[name="selectedOrder"]:checked');
+                  if (selectedOrder) {
+                    document.getElementById("admin-createOrder-id").value = selectedOrder.getAttribute("data-id");
+                    document.getElementById("admin-createOrder-customer").value = selectedOrder.getAttribute("data-customer");
+                    document.getElementById("admin-createOrder-date").value = selectedOrder.getAttribute("data-date");
+                    document.getElementById("admin-createOrder-total").value = selectedOrder.getAttribute("data-total");
+                  }
+                });
+              });
+            }
+          };
+          xhr.send();
+        } */
+
+        // Fetch users when the page loads
+        fetchUsers();
+
+        // Add user button functionality
+        document
+          .getElementById("add-user-btn")
+          .addEventListener("click", function () {
+            const firstName = document.getElementById(
+              "admin-createUsr-firstname"
+            ).value;
+            const lastName = document.getElementById(
+              "admin-createUsr-lastname"
+            ).value;
+            const email = document.getElementById(
+              "admin-createUsr-email"
+            ).value;
+            const password = document.getElementById(
+              "admin-createUsr-password"
+            ).value;
+            const Cpassword = document.getElementById(
+              "admin-createUsr-Cpassword"
+            ).value;
+
+            const xhr = new XMLHttpRequest();
+            xhr.open("POST", "/admin/users", true);
+            xhr.setRequestHeader(
+              "Content-Type",
+              "application/json;charset=UTF-8"
+            );
+            xhr.onreadystatechange = function () {
+              if (xhr.readyState === 4 && xhr.status === 200) {
+                // Clear input fields after successful addition
+                document.getElementById("admin-createUsr-firstname").value = "";
+                document.getElementById("admin-createUsr-lastname").value = "";
+                document.getElementById("admin-createUsr-email").value = "";
+                document.getElementById("admin-createUsr-password").value = "";
+                document.getElementById("admin-createUsr-Cpassword").value = "";
+
+                // Fetch users again to update the table
+                fetchUsers();
+              }
+            };
+            const data = JSON.stringify({
+              first: firstName,
+              last: lastName,
+              email: email,
+              password: password,
+              Cpassword: Cpassword,
+            });
+            xhr.send(data);
+          });
+
+        // Update user button functionality
+        document
+          .getElementById("update-user-btn")
+          .addEventListener("click", function () {
+            const firstName = document.getElementById(
+              "admin-createUsr-firstname"
+            ).value;
+            const lastName = document.getElementById(
+              "admin-createUsr-lastname"
+            ).value;
+            const oldEmail = document
+              .getElementsByClassName("selected")[0]
+              .getAttribute("data-email");
+
+            const newEmail = document.getElementById(
+              "admin-createUsr-email"
+            ).value;
+
+            const xhr = new XMLHttpRequest();
+            xhr.open("PUT", `/admin/users/${oldEmail}`, true);
+            xhr.setRequestHeader(
+              "Content-Type",
+              "application/json;charset=UTF-8"
+            );
+            xhr.onreadystatechange = function () {
+              if (xhr.readyState === 4 && xhr.status === 200) {
+                // Clear input fields after successful update
+                document.getElementById("admin-createUsr-firstname").value = "";
+                document.getElementById("admin-createUsr-lastname").value = "";
+                document.getElementById("admin-createUsr-email").value = "";
+                document.getElementById("admin-createUsr-password").value = "";
+                document.getElementById("admin-createUsr-Cpassword").value = "";
+
+                // Fetch users again to update the table
+                fetchUsers();
+              }
+            };
+            const data = JSON.stringify({
+              first: firstName,
+              last: lastName,
+              email: newEmail,
+            });
+            xhr.send(data);
+          });
+
+        // Delete user button functionality
+        document
+          .getElementById("delete-user-btn")
+          .addEventListener("click", function () {
+            const email = document.getElementById(
+              "admin-createUsr-email"
+            ).value;
+
+            const xhr = new XMLHttpRequest();
+            xhr.open("DELETE", `/admin/users/${email}`, true);
+            xhr.onreadystatechange = function () {
+              if (xhr.readyState === 4 && xhr.status === 200) {
+                // Clear input fields after successful deletion
+                document.getElementById("admin-createUsr-firstname").value = "";
+                document.getElementById("admin-createUsr-lastname").value = "";
+                document.getElementById("admin-createUsr-email").value = "";
+                document.getElementById("admin-createUsr-password").value = "";
+                document.getElementById("admin-createUsr-Cpassword").value = "";
+
+                // Fetch users again to update the table
+                fetchUsers();
+              }
+            };
+            xhr.send();
+          });
+      });
+    </script>
+  </body>
+</html>
