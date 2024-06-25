@@ -249,8 +249,40 @@ html::-webkit-scrollbar-thumb{
   color:black;
  }
 
-#bookDetails .single-book-details button{
-    justify-content: space-between;
+ .secretForm {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.secretForm input[type="number"] {
+    width: 60px;
+    height: 40px;
+    padding: 0 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.secretForm button {
+    width: 150px;
+    height: 40px;
+    margin-left: 10px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #606c38; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    justify-content:space-between;
+}
+
+.secretForm button:hover {
+    background-color: #283618;
+}
+
+ /*#bookDetails .single-book-details button{
+    justify-content:space-between;
     font-size:17px;
     background:#606c38;
     color:#fff;
@@ -264,7 +296,7 @@ html::-webkit-scrollbar-thumb{
  #bookDetails .single-book-details button:hover{
     background:#283618;
  }
-
+*/
  #bookDetails .single-book-details span{
     font-size:20px;
     line-height:43px;

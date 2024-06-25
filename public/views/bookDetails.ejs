@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="/bookDetail.css"> <!--WWWWWWAAAAAAARRRRRRNNNNNNIIIIIINNNNNNGGGGGGG-->
+    <link rel="icon" href="/Icon.jpeg">
+    <link rel="stylesheet" href="/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Bookly</title>
+<head>
+
+</head>
+
+<body>
+
+     <!--Two headers -->
+
+    <!--First header -->
+    <header class="header">
+        <div class="header-1">
+        
+        <a href="#" class="logo"> <i class="fas fa-book"></i> bookly</a>
+        
+        <form action="" class="search-form">
+        <input type="search" name="" placeholder="search here..." id="search-box">
+        <label for="search-box" class="fas fa-search"></label>
+        
+        </form>
+        
+        <div class="icons">
+        <div id="search-btn" class="fas fa-search"></div>
+        <a href="/wishlist" class="fas fa-heart"></a>
+        <a href="/cart" class="fas fa-shopping-cart"></a>
+        <a href="userpro.html" class="fas fa-cog"></a>
+        </div>
+        
+        </div>
+        
+        <!--Second header -->
+        
+        <div class="header-2">
+            <nav class="nav">
+        
+                <div class="nav-menu">
+                        <a href="#"class="link active">Home</a>
+                        <a href="/shopPage"class="link">Shop</a>
+                        <a href="#"class="link">About</a>
+                        <a href="#"class="link">contact us</a>
+                </div>
+        
+            </nav>
+        </div>
+        
+            </header>
+
+    <div id="bookDetails">
+
+        <div class="single-book-image">
+<img src="/<%=book.bookCover%>" width="100%" id="MainImg" alt="">
+
+<div class="small-img-group">
+
+
+<div class="small-img-col">
+<img src="/Book6.jpeg" width="100%" class="small-img" alt="">
+</div>
+
+<div class="small-img-col">
+<img src="/Book5.jpeg" width="100%" class="small-img" alt="">
+</div>
+
+<div class="small-img-col">
+    <img src="/Book4.jpeg" width="100%" class="small-img" alt="">
+    </div>
+
+    <div class="small-img-col">
+        <img src="/Book3.png" width="100%" class="small-img" alt="">
+        </div>
+
+</div>
+
+        </div>
+
+        <div class="single-book-details">
+<h6 id="bookCategory">Book Category: <%= book.bookCategory %></h6>
+<h4 id="bookTitle">Book Title: <%= book.bookTitle %></h4>
+<h2 id="bookPrice">Book Price: <%= book.bookPrice %></h2>
+<form action="/cart" class="secretForm" method="POST">
+    <input type ="hidden" name="userId" value="6679bdafae31fc98ac456aee">
+    <input type="hidden" name="bookId" value="<%= book._id %>">
+    <button type="submit" class="normal1">Add To Cart</button>
+</form>
+<form action="/wishlist" class="secretForm" method="POST">
+    <input type ="hidden" name="userId" value="6679bdafae31fc98ac456aee">
+    <input type="hidden" name="bookId" value="<%= book._id %>">
+    <button class="normal2">Add To Wishlist</button>
+</form>
+<h4>Book Details:</h4>
+<span>
+<%=book.bookDescription%>
+</span>
+
+        </div>
+
+</div>
+
+
+<!--footer-->
+
+<footer class="footer">
+    <div class="social">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-threads"></i></a>
+        <a href="#"><i class="fab fa-tiktok"></i></a>
+    </div>
+    <ul class="list">
+        <li>
+            <a href="#">Home</a>
+        </li>
+        <li>
+            <a href="#">about us</a>
+        </li>
+        <li>
+            <a href="#">Shop</a>
+        </li>
+
+        <li>
+            <a href="#">Terms</a>
+        </li>
+
+    </ul>
+    <p class="copyright">
+        &copy;	 BOOKLY    </p>
+
+    </footer>
+
+</body>
+
+</html>
